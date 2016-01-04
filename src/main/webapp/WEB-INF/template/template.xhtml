@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html" xml:lang="en" lang="en">
 <h:head>
-    <title>title</title>
+    <title><ui:insert name="title">title</ui:insert> </title>
 </h:head>
 <h:body>
     <ui:include src="navigation.xhtml"/>
-    <ui:composition template="ajoutAuteur.xhtml"/>
+    <ui:composition template="../../ajoutAuteur.xhtml"/>
 </h:body>
 </html>

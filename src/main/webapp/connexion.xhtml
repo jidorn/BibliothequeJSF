@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="WEB-INF/template/template.xhtml">
+    <ui:define name="title">Connexion</ui:define>
+    <ui:define name="mainPage">
+        <div>
+            <label>pseudo : </label>
+            <h:inputText value="#{mbAjoutUtilisateur.utilisateur.pseudo}" />
+        </div>
+        <div>
+            <label>mail : </label>
+            <h:inputText value="#{mbAjoutUtilisateur.utilisateur.mail}" />
+        </div>
+        <div>
+            <label>mdp : </label>
+            <h:inputText value="#{mbAjoutUtilisateur.utilisateur.mdp}" />
+        </div>
+        <h:commandButton value="Ajouter"
+                         action="#{mbAjoutUtilisateur.ajoutUtilisateur}" />
+    </ui:define>
+</ui:composition>
+</html>
