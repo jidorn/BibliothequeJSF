@@ -13,7 +13,7 @@
 				<label>Nom : <h:inputText
 						value="#{mbRechercheAuteur.nomRecherche}" />
 				</label>
-				<h:commandButton action="#{mbRechercheAuteur.rechercher}"
+				<h:commandButton action="#{mbRechercheAuteur.loadRecherche}"
 								 value="Rechercher" />
 			</div>
 			<h:panelGroup rendered="#{not empty mbRechercheAuteur.listeAuteurs}">

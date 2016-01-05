@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import fr.afcepf.al26.bibliotheque.entity.Auteur;
 import fr.afcepf.al26.bibliotheque.idao.IDaoAuteur;
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
 @ManagedBean(name = "mbRechercheAuteur")
 @SessionScoped
 public class RechercheAuteurMb {
-
+    private Logger log = Logger.getLogger(RechercheAuteurMb.class);
     private String nomRecherche;
     private List<Auteur> listeAuteurs;
 
@@ -37,6 +38,12 @@ public class RechercheAuteurMb {
         IDaoAuteur daoAuteur = new DaoAuteur();
         listeAuteurs =
                 daoAuteur.rechercherAuteurParNom(nomRecherche);
+        log.info("recherche : "+nomRecherche);
         return "";
+    }
+
+    public void loadRecherche(){
+        if(!FacesContext.getCurrentInstance().isPostback())
+            rechercher();
     }
 }
