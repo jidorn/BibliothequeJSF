@@ -4,26 +4,26 @@
 	  xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <ui:composition template="/WEB-INF/template/template.xhtml">
-	<ui:define name="titre">Ajouter un livre</ui:define>
+	<ui:define name="titre">#{trad.titrePageAjouterLivre}</ui:define>
 	<ui:define name="mainPage">
 		<div>
-			<label>Titre : <h:inputText
+			<label>#{trad.titreLivre}<h:inputText
 					value="#{mbAjoutLivre.livre.titre}" /></label>
 		</div>
 		<div>
-			<label>Genre : <h:inputText
+			<label>#{trad.genreLivre}<h:inputText
 					value="#{mbAjoutLivre.livre.genre}" /></label>
 		</div>
 		<div>
-			<label>Pages : <h:inputText
+			<label>#{trad.pageLivre}<h:inputText
 					value="#{mbAjoutLivre.livre.nbPages}" /></label>
 		</div>
 		<div>
-			<label>Edition : <h:inputText
+			<label>#{trad.editionLivre}<h:inputText
 					value="#{mbAjoutLivre.livre.edition}" /></label>
 		</div>
 		<div>
-			<label>Date : <h:inputText
+			<label>#{trad.DateParutionLivre}<h:inputText
 					value="#{mbAjoutLivre.livre.dateParution}">
 				<f:convertDateTime pattern="dd/MM/yyyy" />
 			</h:inputText></label>
@@ -35,7 +35,7 @@
 			</h:selectOneMenu>
 		</div>
 		<div>
-			<h:commandButton value="Ajouter"
+			<h:commandButton value="#{trad.AjouterLivreBoutton}"
 							 action="#{mbAjoutLivre.ajouterLivre()}" />
 		</div>
 	</ui:define>

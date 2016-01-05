@@ -3,21 +3,21 @@
       xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="WEB-INF/template/template.xhtml">
-    <ui:define name="title">Connexion</ui:define>
+    <ui:define name="title">#{trad.titrePageConnexion}</ui:define>
     <ui:define name="pageContent">
         <div>
-            <label>pseudo : </label>
+            <label>#{trad.loginUser}</label>
             <h:inputText value="#{mbAjoutUtilisateur.utilisateur.pseudo}" />
         </div>
         <div>
-            <label>mail : </label>
+            <label>#{trad.mailUser}</label>
             <h:inputText value="#{mbAjoutUtilisateur.utilisateur.mail}" />
         </div>
         <div>
-            <label>mdp : </label>
+            <label>#{trad.passwordUser}</label>
             <h:inputText value="#{mbAjoutUtilisateur.utilisateur.mdp}" />
         </div>
-        <h:commandButton value="Ajouter"
+        <h:commandButton value="#{trad.connexion}"
                          action="#{mbAjoutUtilisateur.ajoutUtilisateur}" />
     </ui:define>
 </ui:composition>

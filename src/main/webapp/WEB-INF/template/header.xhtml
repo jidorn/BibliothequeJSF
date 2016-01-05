@@ -3,7 +3,7 @@
 <ui:composition>
     <header>
         <div id="applicationTitre">
-            <label>Ma bibliothèque en ligne</label>
+            <label>#{trad.titreHeader}</label>
         </div>
         <div>
             <h:commandLink value="English" action="#{switcher.switchLocale('en')}" />
@@ -12,11 +12,11 @@
         <div id="panelCoDeco">
             <h:panelGroup rendered="#{mbUtilisateur.utilisateur==null}">
                 <div class="row">
-                    <label>login : </label>
+                    <label>#{trad.loginUser}</label>
                     <h:inputText value="#{mbUtilisateur.login}"/>
-                    <label>mdp : </label>
+                    <label>#{trad.passwordUser}</label>
                     <h:inputSecret value="#{mbUtilisateur.mdp}"/>
-                    <h:commandButton value="Connexion" action="#{mbUtilisateur.connecter}"/>
+                    <h:commandButton value="#{trad.connexion}" action="#{mbUtilisateur.connecter}"/>
                 </div>
                 <div>
                     <h:outputLabel value="#{mbUtilisateur.message}"/>

@@ -1,47 +1,38 @@
-<!DOCTYPE>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:head>
-    <style>
-        .livre {
-            float: left;
-            width: 300px;
-        }
-
-        .alignRight {
-            text-align: right;
-        }
-    </style>
-</h:head>
-<h:body>
-    <div>
-        <label>Auteur :</label>
-        <h:outputLabel value="#{mbLivresAuteur.auteur.nom}" />
-        <h:outputLabel value="#{mbLivresAuteur.auteur.prenom}" />
-    </div>
-    <div>
-        <ui:repeat var="livre" value="#{mbLivresAuteur.livreList}">
-            <div class="livre">
-                <div>
-                    <h:outputLabel value="#{livre.titre}" />
+<ui:composition template="/WEB-INF/template/template.xhtml" >
+    <ui:define name="titre">#{trad.titrePageLivreAuteur}</ui:define>
+    <ui:define name="mainPage">
+        <div>
+            <label>#{trad.labelAuteur}</label>
+            <h:outputLabel value="#{mbLivresAuteur.auteur.nom}" />
+            <h:outputLabel value="#{mbLivresAuteur.auteur.prenom}" />
+        </div>
+        <div>
+            <ui:repeat var="livre" value="#{mbLivresAuteur.livreList}">
+                <div class="livre">
+                    <div>
+                        <h:outputLabel value="#{livre.titre}" />
+                    </div>
+                    <div>
+                        <h:outputLabel value="#{livre.dateParution}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:outputLabel>
+                    </div>
+                    <div>
+                        <label>#{trad.editionLivre}</label>
+                        <h:outputLabel value="#{livre.edition}" />
+                    </div>
+                    <div class="alignRight">
+                        <h:outputLabel value="#{livre.nbPages} pages" />
+                    </div>
                 </div>
-                <div>
-                    <h:outputLabel value="#{livre.dateParution}">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:outputLabel>
-                </div>
-                <div>
-                    <label>Edition :</label>
-                    <h:outputLabel value="#{livre.edition}" />
-                </div>
-                <div class="alignRight">
-                    <h:outputLabel value="#{livre.nbPages} pages" />
-                </div>
-            </div>
-        </ui:repeat>
-    </div>
-</h:body>
+            </ui:repeat>
+        </div>
+    </ui:define>
+</ui:composition>
 </html>

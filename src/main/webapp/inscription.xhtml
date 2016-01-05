@@ -2,21 +2,21 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 <ui:composition template="WEB-INF/template/template.xhtml">
-    <ui:define name="titre">S'inscrire</ui:define>
+    <ui:define name="titre">#{trad.titrePageInscription}</ui:define>
     <ui:define name="mainPage">
         <div>
-            <label>pseudo : </label>
+            <label>#{trad.loginUser}</label>
             <h:inputText value="#{inscriptionMb.utilisateur.pseudo}" />
         </div>
         <div>
-            <label>mail : </label>
+            <label>#{trad.mailUser}</label>
             <h:inputText value="#{inscriptionMb.utilisateur.mail}" />
         </div>
         <div>
-            <label>mdp : </label>
+            <label>#{trad.passwordUser}</label>
             <h:inputText value="#{inscriptionMb.utilisateur.mdp}" />
         </div>
-        <h:commandButton value="s'inscrire"
+        <h:commandButton value="#{trad.boutonInscription}"
                          action="#{inscriptionMb.inscrireUtilisateur}" />
     </ui:define>
 </ui:composition>
