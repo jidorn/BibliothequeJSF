@@ -59,9 +59,15 @@ public class SessionUtilisateurMb {
         this.utilisateur = utilisateur;
     }
 
+    public void connecter(Utilisateur utilisateur) {
+        login = utilisateur.getMail();
+        mdp = utilisateur.getMdp();
+        connecter();
+    }
+
     public String connecter() {
         IBusinessUtilisateur daoUtilisateur = new BusinessUtilisateur();
-        utilisateur = daoUtilisateur.getUtilisateur(login,mdp);
+        utilisateur = daoUtilisateur.getUtilisateur(login, mdp);
         if (utilisateur != null)
             message = "Bonjour" + utilisateur.getPseudo();
         else
@@ -71,11 +77,12 @@ public class SessionUtilisateurMb {
 
     /**
      * methode qui va permettre de supprimer un utilisateur de la session afin de le déconnecter
+     *
      * @return à la page d'accueil.
      */
-    public  String deconnecter(){
+    public String deconnecter() {
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-       session.invalidate();
+        session.invalidate();
         return "";
     }
 }
