@@ -1,0 +1,132 @@
+@CHARSET "UTF-8";
+
+a {
+	color: #ECECF4;
+}
+
+a:VISITED {
+	color: #ECECF4;
+}
+
+a:hover {
+	color: #ECECF4;
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	background-image:
+		url("http://la-bibliotheque-de-louloute.com/wp-content/uploads/2013/10/BanniereBibliotheque.png");
+	background-repeat: no-repeat;
+}
+
+nav {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	right: 0;
+	height: 35px;
+	background-color: #C12726;
+	border: 1px solid #E7B77F;
+	background-color: #C12726;
+}
+
+nv ul {
+	padding: 0;
+	margin: 5px 0px;
+	list-style-type: none;
+}
+
+nav ul li {
+	background-color: #C12726;
+	border: 1px solid #E7B77F;
+	display: inline;
+	margin-right: 10px;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+nav ul li:hover {
+	background-color: #3F75A9;
+}
+
+nav ul li a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #3F75A9;
+	color: #ECECF4;
+}
+
+#page {
+	position: absolute;
+	top: 85px;
+	left: 0;
+	right: 0;
+	bottom: 30px;
+	margin: 30px 50px;
+	overflow-y:scroll;
+}
+
+footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0px;
+	height: 30px;
+	text-align: center;
+}
+
+
+
+.midRow {
+	width: 50%;
+	float: left;
+}
+
+.row {
+	clear: both;
+	margin: 5px 0;
+	height: 26px;
+}
+
+.alignCenter {
+	text-align: center;
+}
+
+.alignRight {
+	text-align: right;
+}
+
+.alignLeft {
+	text-align: left;
+}
+.center{
+	
+	margin: 0 auto;
+}
+
+.formulaire {
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#applicationTitre {
+	width: 500px;
+	text-align: left;
+}
+
+#applicationTitre label {	
+	font-size: 18pt;
+}
+.livre
+{
+	width:150px;
+	float:left;
+	height:200px;
+}

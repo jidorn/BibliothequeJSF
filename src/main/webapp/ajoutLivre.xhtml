@@ -1,48 +1,43 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:head>Ajout Livre</h:head>
-<body>
-	<div>
-		<h:form>
-			<div>
-				<label>Title : <h:inputText
-						value="#{mbAjoutLivre.livre.titre}" /></label>
-			</div>
-			<div>
-				<label>genre : <h:inputText
-						value="#{mbAjoutLivre.livre.genre}" />
-				</label>
-			</div>
-			<div>
-				<label>edition : <h:inputText
-						value="#{mbAjoutLivre.livre.edition}" /></label>
-			</div>
-			<div>
-				<label>Pages : <h:inputText
-						value="#{mbAjoutLivre.livre.nbPages}" /></label>
-			</div>
-			<div>
-				<label>date : <h:inputText
-						value="#{mbAjoutLivre.livre.dateParution}">
-						<f:convertDateTime pattern="dd/MM/yyyy" />
-					</h:inputText></label>
-			</div>
-			<div>
-				<label>Auteur : <h:selectOneMenu
-						value="#{mbAjoutLivre.livre.auteur.idAuteur}">
-						<f:selectItems value="#{mbAjoutLivre.listAuteurs}" var="auteur"
-							itemLabel="#{auteur.nom} #{auteur.prenom}"
-							itemValue="#{auteur.idAuteur}" />
-					</h:selectOneMenu></label>
-			</div>
-			<div>
-				<h:commandButton action="#{mbAjoutLivre.ajouterLivre()}"
-					value="Ajouter" />
-			</div>
-		</h:form>
-	</div>
-</body>
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="titre">Ajouter un livre</ui:define>
+	<ui:define name="mainPage">
+		<div>
+			<label>Titre : <h:inputText
+					value="#{mbAjoutLivre.livre.titre}" /></label>
+		</div>
+		<div>
+			<label>Genre : <h:inputText
+					value="#{mbAjoutLivre.livre.genre}" /></label>
+		</div>
+		<div>
+			<label>Pages : <h:inputText
+					value="#{mbAjoutLivre.livre.nbPages}" /></label>
+		</div>
+		<div>
+			<label>Edition : <h:inputText
+					value="#{mbAjoutLivre.livre.edition}" /></label>
+		</div>
+		<div>
+			<label>Date : <h:inputText
+					value="#{mbAjoutLivre.livre.dateParution}">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+			</h:inputText></label>
+		</div>
+		<div>
+			<h:selectOneMenu value="#{mbAjoutLivre.livre.auteur.idAuteur}">
+				<f:selectItems value="#{mbAjoutLivre.listAuteurs}"
+							   itemValue="#{a.idAuteur}" var="a" itemLabel="#{a.nom }" />
+			</h:selectOneMenu>
+		</div>
+		<div>
+			<h:commandButton value="Ajouter"
+							 action="#{mbAjoutLivre.ajouterLivre()}" />
+		</div>
+	</ui:define>
+</ui:composition>
 </html>

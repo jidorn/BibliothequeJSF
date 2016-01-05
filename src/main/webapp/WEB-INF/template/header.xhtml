@@ -1,8 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
 <ui:composition>
     <header>
+        <div id="applicationTitre">
+            <label>Ma bibliothèque en ligne</label>
+        </div>
+        <div id="panelCoDeco">
+            <h:panelGroup rendered="#{mbUtilisateur.utilisateur==null}">
+                <div class="row">
+                    <label>login : </label>
+                    <h:inputText value="#{mbUtilisateur.login}"/>
+                    <label>login : </label>
+                    <h:inputSecret value="#{mbUtilisateur.mdp}"/>
+                    <h:commandButton value="Connexion" action="#{mbUtilisateur.connecter}"/>
+                </div>
+                <div>
+                    <h:outputLabel value="#{mbUtilisateur.message}"/>
+                </div>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{mbUtilisateur.utilisateur!=null}">
+                <div>
+                    <h:outputLabel value="#{mbUtilisateur.message}"/>
+                </div>
+            </h:panelGroup>
+        </div>
 
     </header>
 </ui:composition>

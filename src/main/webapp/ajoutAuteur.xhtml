@@ -1,24 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<h:head>
-    <title><ui:insert name="title">title</ui:insert> </title>
-</h:head>
-<body>
-<ui:composition>
-	<h:form>
-		<div>
-			<label>Nom : </label>
-			<h:inputText value="#{mbAjoutAuteur.auteur.nom}" />
-		</div>
-		<div>
-			<label>Prenom : </label>
-			<h:inputText value="#{mbAjoutAuteur.auteur.prenom}" />
-		</div>
-		<h:commandButton value="Ajouter"
-						 action="#{mbAjoutAuteur.ajoutAuteur()}" />
-	</h:form>
-</ui:composition>
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
 
-</body>
+<ui:composition template="/WEB-INF/template/template.xhtml">
+
+	<ui:define name="titre">Ajouter un auteur</ui:define>
+	<ui:define name="mainPage">
+		<div class="formulaire">
+			<div class="row">
+				<div class="midRow">
+					<label>Nom :</label>
+				</div>
+				<div class="midRow">
+					<h:inputText value="#{mbAjoutAuteur.auteur.nom}" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="midRow">
+					<label>Prénom : </label>
+				</div>
+				<div class="midRow">
+					<h:inputText value="#{mbAjoutAuteur.auteur.prenom}" />
+				</div>
+			</div>
+			<div class="row alignCenter">
+				<h:commandButton value="Ajouter"
+								 action="#{mbAjoutAuteur.ajoutAuteur}" />
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
 </html>
