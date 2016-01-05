@@ -5,6 +5,10 @@
         <div id="applicationTitre">
             <label>Ma bibliothèque en ligne</label>
         </div>
+        <div>
+            <h:commandLink value="English" action="#{switcher.switchLocale('en')}" />
+            <h:commandLink value="French" action="#{switcher.switchLocale('fr')}" />
+        </div>
         <div id="panelCoDeco">
             <h:panelGroup rendered="#{mbUtilisateur.utilisateur==null}">
                 <div class="row">
@@ -17,6 +21,7 @@
                 <div>
                     <h:outputLabel value="#{mbUtilisateur.message}"/>
                 </div>
+
             </h:panelGroup>
             <h:panelGroup rendered="#{mbUtilisateur.utilisateur!=null}">
                 <div>

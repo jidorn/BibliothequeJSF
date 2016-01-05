@@ -4,12 +4,12 @@
 
 <ui:composition template="/WEB-INF/template/template.xhtml">
 
-	<ui:define name="titre">Ajouter un auteur</ui:define>
+	<ui:define name="titre">#{trad['titre.PageAjouterAuteur']}</ui:define>
 	<ui:define name="mainPage">
 		<div class="formulaire">
 			<div class="row">
 				<div class="midRow">
-					<label>Nom :</label>
+					<label>#{trad['nom']}</label>
 				</div>
 				<div class="midRow">
 					<h:inputText value="#{mbAjoutAuteur.auteur.nom}" />
@@ -17,14 +17,14 @@
 			</div>
 			<div class="row">
 				<div class="midRow">
-					<label>Prénom : </label>
+					<label>#{trad.prenom}</label>
 				</div>
 				<div class="midRow">
 					<h:inputText value="#{mbAjoutAuteur.auteur.prenom}" />
 				</div>
 			</div>
 			<div class="row alignCenter">
-				<h:commandButton value="Ajouter"
+				<h:commandButton value="#{trad['ajoutAuteur.ajouter']}"
 								 action="#{mbAjoutAuteur.ajoutAuteur}" />
 			</div>
 		</div>
