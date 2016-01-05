@@ -17,7 +17,7 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 50px;
+	height: 70px;
 	background-image:
 		url("http://la-bibliotheque-de-louloute.com/wp-content/uploads/2013/10/BanniereBibliotheque.png");
 	background-repeat: no-repeat;
@@ -25,7 +25,7 @@ header {
 
 nav {
 	position: absolute;
-	top: 50px;
+	top: 70px;
 	left: 0;
 	right: 0;
 	height: 35px;
@@ -64,12 +64,12 @@ body {
 
 #page {
 	position: absolute;
-	top: 85px;
+	top: 105px;
 	left: 0;
 	right: 0;
 	bottom: 30px;
 	margin: 30px 50px;
-	overflow-y:scroll;
+	overflow-y:auto;
 }
 
 footer {
@@ -119,8 +119,12 @@ footer {
 #applicationTitre {
 	width: 500px;
 	text-align: left;
+	float:left;
 }
-
+#panelCoDeco{
+	width:500px;
+	float:right;
+}
 #applicationTitre label {	
 	font-size: 18pt;
 }

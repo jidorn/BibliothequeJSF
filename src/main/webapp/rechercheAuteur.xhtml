@@ -4,38 +4,41 @@
 	  xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:head>
-</h:head>
-<h:body>
-	<h:form>
-		<div>
-			<label>Nom : <h:inputText
-					value="#{mbRechercheAuteur.nomRecherche}" />
-			</label>
-			<h:commandButton action="#{mbRechercheAuteur.rechercher}"
-							 value="Rechercher" />
-		</div>
-		<div>
-			<table>
-				<tr>
-					<th>Id</th>
-					<th>Nom</th>
-					<th>Prénom</th>
-					<th>liens</th>
-				</tr>
+<ui:composition template="/WEB-INF/template/template.xhtml" >
+	<ui:define name="titre">Rechercher un auteur</ui:define>
+	<ui:define name="mainPage">
+		<f:event type="preRenderView" listener="#{mbRechercheAuteur.rechercher}"/>
+		<div class="formulaire row">
+			<div class="alignCenter row">
+				<label>Nom : <h:inputText
+						value="#{mbRechercheAuteur.nomRecherche}" />
+				</label>
+				<h:commandButton action="#{mbRechercheAuteur.rechercher}"
+								 value="Rechercher" />
+			</div>
+			<h:panelGroup rendered="#{not empty mbRechercheAuteur.listeAuteurs}">
+				<div class="center row">
+					<table>
+						<tr>
+							<th>Id</th>
+							<th>Nom</th>
+							<th>Prénom</th>
+							<th>liens</th>
+						</tr>
 
-				<ui:repeat var="auteur" value="#{mbRechercheAuteur.listeAuteurs}">
-					<tr>
-						<td><h:outputText value="#{auteur.idAuteur}" /></td>
-						<td><h:outputText value="#{auteur.nom}" /></td>
-						<td><h:outputText value="#{auteur.prenom}" /></td>
-						<td><h:commandLink value="Voir livres"
-										   action="#{mbLivresAuteur.recupLivreAuteur(auteur.idAuteur)}" />
-						</td>
-					</tr>
-				</ui:repeat>
-			</table>
+						<ui:repeat var="auteur" value="#{mbRechercheAuteur.listeAuteurs}">
+							<tr>
+								<td><h:outputText value="#{auteur.idAuteur}" /></td>
+								<td><h:outputText value="#{auteur.nom}" /></td>
+								<td><h:outputText value="#{auteur.prenom}" /></td>
+								<td><h:commandLink value="Voir livres"
+												   action="#{mbLivresAuteur.recupLivreAuteur(auteur.idAuteur)}" />
+								</td>
+							</tr>
+						</ui:repeat>
+					</table>
+				</div></h:panelGroup>
 		</div>
-	</h:form>
-</h:body>
+	</ui:define>
+</ui:composition>
 </html>
