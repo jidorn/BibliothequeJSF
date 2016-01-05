@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="WEB-INF/template/template.xhtml">
+    <ui:define name="titre">S'inscrire</ui:define>
+    <ui:define name="mainPage">
+        <div>
+            <label>pseudo : </label>
+            <h:inputText value="#{inscriptionMb.utilisateur.pseudo}" />
+        </div>
+        <div>
+            <label>mail : </label>
+            <h:inputText value="#{inscriptionMb.utilisateur.mail}" />
+        </div>
+        <div>
+            <label>mdp : </label>
+            <h:inputText value="#{inscriptionMb.utilisateur.mdp}" />
+        </div>
+        <h:commandButton value="s'inscrire"
+                         action="#{inscriptionMb.inscrireUtilisateur}" />
+    </ui:define>
+</ui:composition>
+</html>

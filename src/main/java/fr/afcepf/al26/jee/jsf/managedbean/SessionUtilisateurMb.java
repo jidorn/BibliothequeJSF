@@ -1,6 +1,8 @@
 package fr.afcepf.al26.jee.jsf.managedbean;
 
+import fr.afcepf.al26.bibliotheque.business.BusinessUtilisateur;
 import fr.afcepf.al26.bibliotheque.entity.Utilisateur;
+import fr.afcepf.al26.bibliotheque.ibusiness.IBusinessUtilisateur;
 import fr.afcepf.al26.bibliotheque.idao.IDaoUtilisateur;
 import fr.afcepf.al26.bibliotheque.jdbc.dao.DaoUtilisateur;
 import org.apache.log4j.Logger;
@@ -58,8 +60,8 @@ public class SessionUtilisateurMb {
     }
 
     public String connecter() {
-        IDaoUtilisateur daoUtilisateur = new DaoUtilisateur();
-        utilisateur = daoUtilisateur.getUtilisateurs(login, mdp);
+        IBusinessUtilisateur daoUtilisateur = new BusinessUtilisateur();
+        utilisateur = daoUtilisateur.getUtilisateur(login,mdp);
         if (utilisateur != null)
             message = "Bonjour" + utilisateur.getPseudo();
         else
